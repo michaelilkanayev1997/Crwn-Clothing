@@ -2,7 +2,7 @@ import './categories.styles.scss';
 
 
 const App = () => {
-  const categories = [
+  const categories = [ //Categories titles:
     {
       id: 1,
       title: "Hats",
