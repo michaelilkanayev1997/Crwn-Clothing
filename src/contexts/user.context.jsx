@@ -1,6 +1,9 @@
 import { createContext, useState, useEffect } from "react";
 
-import { onAuthStateChangedListener, createUserDocumentFromAuth } from "../utils/firebase/firebase.utils";
+import {
+  onAuthStateChangedListener,
+  createUserDocumentFromAuth,
+} from "../utils/firebase/firebase.utils";
 
 //The actual storage itself
 export const UserContext = createContext({
@@ -15,7 +18,7 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
-      if(user){
+      if (user) {  // User is signed in or token was refreshed.
         createUserDocumentFromAuth(user);
       }
       setCurrentUser(user);
