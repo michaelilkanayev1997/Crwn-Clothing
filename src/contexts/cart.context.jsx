@@ -68,6 +68,7 @@ const cartReducer = (state, action) => {
 const clearCartItem = (cartItems, cartItemToClear) =>
   cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 
+  // Context
 export const CartContext = createContext({
   isCartOpen: false,
   setIsCartOpen: () => {},
