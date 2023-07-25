@@ -1,8 +1,8 @@
 # Crwn-Clothing
 
 ## Description
-This repository contains an E-commerce app completed during the "Complete React Developer in 2023" course on Udemy.
-This course helped me to master the latest features and best practices in the React ecosystem.
+- This repository contains an E-commerce app completed as part of the "Complete React Developer in 2023" course on Udemy.
+- Through this course, I gained proficiency in the latest features and best practices of the React ecosystem.
 
 ## Technologies Used and Learnd
 
