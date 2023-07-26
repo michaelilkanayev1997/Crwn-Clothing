@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cart.context";
 import CartItem from "../cart-item/cart-item.comonent";

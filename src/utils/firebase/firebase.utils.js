@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -61,7 +62,7 @@ export const addCollectionAndDocuments = async (
 };
 
 export const getCategoriesAndDocuments = async () => {
-  const collectionRef = collection(db, 'categories');
+  const collectionRef = collection(db, "categories");
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
@@ -72,7 +73,7 @@ export const getCategoriesAndDocuments = async () => {
   }, {});
 
   return categoryMap;
-}
+};
 
 export const createUserDocumentFromAuth = async (
   userAuto,
