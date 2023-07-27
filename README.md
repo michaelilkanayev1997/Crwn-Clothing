@@ -7,7 +7,7 @@
 ## Technologies Used and Learnd
 
 - React Fundamentals - components, JSX, and state management.
-- Context
+- Context Api with Reducers
 - Redux
 - React Hooks
 - Firebase (Database)
