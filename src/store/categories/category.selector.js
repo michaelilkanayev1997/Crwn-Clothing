@@ -3,13 +3,11 @@ import { createSelector } from "reselect";
 const selectCategoryReducer = (state) => state.categories;
 
 export const selectCategories = createSelector(
-  //memoized selector
   [selectCategoryReducer],
   (categoriesSlice) => categoriesSlice.categories
 );
 
 export const selectCategoriesMap = createSelector(
-  //memoized selector
   [selectCategories],
   (categories) =>
     categories.reduce((acc, category) => {
@@ -17,9 +15,4 @@ export const selectCategoriesMap = createSelector(
       acc[title.toLowerCase()] = items;
       return acc;
     }, {})
-);
-
-export const selectCategoriesIsLoading = createSelector(
-  [selectCategoryReducer],
-  (categoriesSlice) => categoriesSlice.isLoading
 );
