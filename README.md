@@ -16,7 +16,6 @@
 - Apollo
 - Stripe API (Payment)
 - netlify
-- TypeScript
 - React Suspense + React Lazy
 - Styled-Components
 - React Performance
