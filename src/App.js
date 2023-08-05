@@ -7,6 +7,7 @@ import {
 } from "./utils/firebase/firebase.utils";
 import { setCurrentUser } from "./store/user/user.reducer";
 import Spinner from "./components/spinner/spinner.component";
+import { GlobalStyle } from "./global.styles";
 //import Home from "./routes/home/home.component";
 //import Authentication from "./routes/authentication/authentication.component";
 //import Navigation from "./routes/navigation/navigation.component";
@@ -44,6 +45,7 @@ const App = () => {
 
   return (
     <Suspense fallback={<Spinner />}>
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
