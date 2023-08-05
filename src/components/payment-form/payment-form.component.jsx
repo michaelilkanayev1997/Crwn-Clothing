@@ -11,6 +11,8 @@ import { useSelector } from "react-redux";
 import { selectCartTotal } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
+import { cartReset } from "../../store/cart/cart.reducer";
 
 // Use the options prop to customize the appearance
 const cardElementOptions = {
@@ -30,6 +32,11 @@ const PaymentForm = () => {
   const amount = useSelector(selectCartTotal);
   const currentUser = useSelector(selectCurrentUser);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleCartReset = () => {
+    dispatch(cartReset());
+  };
 
   const PaymentHandler = async (e) => {
     e.preventDefault();
@@ -73,6 +80,8 @@ const PaymentForm = () => {
       });
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
+        handleCartReset();
+
         await Swal.fire({
           title: "Payment Successful!",
           text: "Thanks for your order",

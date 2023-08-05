@@ -9,14 +9,18 @@ import {
   EmptyMessage,
   CartItems,
 } from "./cart-dropdown.styles";
+import { useDispatch } from "react-redux";
+import { setIsCartOpen } from "../../store/cart/cart.reducer";
 
 const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const goToCheckoutHandler = useCallback(() => {
+    dispatch(setIsCartOpen(false));
     navigate("/checkout");
-  }, [navigate]); //navigate value is not changing.this is only for EsLint
+  }, [navigate, dispatch]); //navigate/dispatch value is not changing.this is only for EsLint
 
   return (
     <CartDropdownContainer>
