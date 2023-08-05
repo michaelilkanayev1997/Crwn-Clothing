@@ -4,11 +4,25 @@ import {
   PaymentFormContainer,
   FormContainer,
   PaymentButton,
+  WarningContainer,
 } from "./payment-form.styles";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectCartTotal } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
+import Swal from "sweetalert2";
+
+// Use the options prop to customize the appearance
+const cardElementOptions = {
+  style: {
+    base: {
+      fontSize: "16px", // Adjust the font size to make the CardElement text smaller
+      "::placeholder": {
+        color: "#aab7c4", // Customize the placeholder color if needed
+      },
+    },
+  },
+};
 
 const PaymentForm = () => {
   const stripe = useStripe();
@@ -36,8 +50,6 @@ const PaymentForm = () => {
       paymentIntent: { client_secret },
     } = response;
 
-    console.log(client_secret);
-
     const paymentResult = await stripe.confirmCardPayment(client_secret, {
       payment_method: {
         card: elements.getElement(CardElement),
@@ -50,19 +62,41 @@ const PaymentForm = () => {
     setIsProcessingPayment(false);
 
     if (paymentResult.error) {
-      alert(paymentResult.error.message);
+      await Swal.fire({
+        title: "Error in payment",
+        text: paymentResult.error.message,
+        icon: "error",
+        showCloseButton: true,
+        showCancelButton: false,
+        confirmButtonColor: "#f44336",
+        confirmButtonText: "OK",
+      });
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
-        alert("Payment Successful!");
+        await Swal.fire({
+          title: "Payment Successful!",
+          text: "Thanks for your order",
+          icon: "success",
+          showCloseButton: true,
+          showCancelButton: false,
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
+        });
       }
     }
   };
 
   return (
     <PaymentFormContainer>
+      <WarningContainer>
+        *Please use the following for test credit card payments*
+        <h3>VISA: </h3>
+        <span>4242 4242 4242 4242</span>
+        <h3>Exp: Any Future Date, CVC: Any 3 Digits</h3>
+      </WarningContainer>
       <FormContainer onSubmit={PaymentHandler}>
         <h2>Credit Card Payment:</h2>
-        <CardElement />
+        <CardElement options={cardElementOptions} />
         <PaymentButton
           isLoading={isProcessingPayment}
           buttonType={BUTTON_TYPE_CLASSES.inverted}
