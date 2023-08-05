@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
 import {
@@ -15,6 +16,11 @@ import PaymentForm from "../../components/payment-form/payment-form.component";
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
+
+  useEffect(() => {
+    // Scroll to the top of the page on render
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <CheckoutContainer>
@@ -38,7 +44,7 @@ const Checkout = () => {
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <Total>Total: ${cartTotal}</Total>
+      <Total>Total: {cartTotal} $</Total>
       <PaymentForm />
     </CheckoutContainer>
   );

@@ -13,8 +13,9 @@ export const CategoryPreviewContainer = styled.div`
 
 export const Title = styled(Link)`
   font-size: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   cursor: pointer;
+  border-bottom: 2px solid #ffa500; /* Orange color for the line */
 `;
 
 export const Preview = styled.div`

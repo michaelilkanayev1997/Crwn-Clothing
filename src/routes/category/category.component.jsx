@@ -11,6 +11,11 @@ const Category = () => {
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
+    // Scroll to the top of the page on render
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
