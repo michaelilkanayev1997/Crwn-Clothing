@@ -16,7 +16,7 @@ const CartDropdown = () => {
 
   const goToCheckoutHandler = useCallback(() => {
     navigate("/checkout");
-  }, []);
+  }, [navigate]); //navigate value is not changing.this is only for EsLint
 
   return (
     <CartDropdownContainer>
