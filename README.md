@@ -19,6 +19,7 @@
 - React Suspense + React Lazy
 - Styled-Components
 - React Performance
+- Progressive Web App (PWA)
 - React Design Patterns
 - Testing with Jest and Snapshot testing
 
