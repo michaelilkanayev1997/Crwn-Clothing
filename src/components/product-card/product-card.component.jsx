@@ -7,8 +7,8 @@ import {
 } from "./product-card.styles";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
-const ProductCard = ({ product }) => {
-  const { name, price, imageUrl } = product;
+const ProductCard = ({ product, title }) => {
+  const { id, name, price, imageUrl } = product;
 
   return (
     <ProductCartContainer>
@@ -19,7 +19,10 @@ const ProductCard = ({ product }) => {
       </Footer>
 
       <Button buttonType={BUTTON_TYPE_CLASSES.details}>
-        <LinkToDetails to="/itemdetails" state={{ product: product }}>
+        <LinkToDetails
+          to={title ? `${title}/${id}` : `${id}`}
+          state={{ product: product }}
+        >
           Details
         </LinkToDetails>
       </Button>
