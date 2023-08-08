@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ProductCartContainer = styled.div`
   width: 100%;
@@ -64,6 +65,10 @@ export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+`;
+
+export const LinkToDetails = styled(Link)`
+  width: 100%;
 `;
 
 export const Name = styled.span`
