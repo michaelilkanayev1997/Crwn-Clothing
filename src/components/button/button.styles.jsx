@@ -55,6 +55,24 @@ export const InvertedButton = styled(BaseButton)`
   }
 `;
 
+export const DetailsButton = styled(BaseButton)`
+  background-color: white;
+  color: white;
+  border: none;
+  padding: 0px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 0px;
+  }
+`;
+
 export const ButtonSpinner = styled(SpinnerContainer)`
   width: 30px;
   height: 30px;
