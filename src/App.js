@@ -9,6 +9,7 @@ import { setCurrentUser } from "./store/user/user.reducer";
 import Spinner from "./components/spinner/spinner.component";
 import { GlobalStyle } from "./global.styles";
 import ItemDetails from "./components/item-details/item-details.component";
+import Category from "./routes/category/category.component";
 //import Home from "./routes/home/home.component";
 //import Authentication from "./routes/authentication/authentication.component";
 //import Navigation from "./routes/navigation/navigation.component";
@@ -50,10 +51,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
+          <Route path="shop/:category/:itemid" element={<ItemDetails />} />
+          <Route path="shop/:category" element={<Category />} />
           <Route path="shop/*" element={<Shop />} />
           <Route path="auth" element={<Authentication />} />
           <Route path="checkout" element={<Checkout />} />
-          <Route path="itemdetails" element={<ItemDetails />} />
         </Route>
       </Routes>
     </Suspense>
