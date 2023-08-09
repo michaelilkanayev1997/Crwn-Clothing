@@ -29,7 +29,7 @@ const Navigation = lazy(() =>
 const Shop = lazy(() => import("./routes/shop/shop.component"));
 const Checkout = lazy(() => import("./routes/checkout/checkout.component"));
 const ItemDetails = lazy(() =>
-  import("./components/item-details/item-details.component")
+  import("./routes/item-details/item-details.component")
 );
 
 const App = () => {

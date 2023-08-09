@@ -30,6 +30,18 @@ export const BaseSpan = styled.span`
 
   @media screen and (max-width: 800px) {
     font-size: 14px;
+
+    &:first-child {
+      font-size: 11px;
+    }
+  }
+`;
+
+export const Name = styled.span`
+  width: 30%;
+
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
   }
 `;
 
