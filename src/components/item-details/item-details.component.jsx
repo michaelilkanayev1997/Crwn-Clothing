@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../store/cart/cart.reducer";
 import { useLocation } from "react-router-dom";
 import Spinner from "../../components/spinner/spinner.component";
+import { toast } from "react-toastify";
 
 const ItemDetails = () => {
   const location = useLocation();
@@ -31,7 +32,25 @@ const ItemDetails = () => {
 
   const dispatch = useDispatch();
 
-  const addProductToCart = () => dispatch(addItemToCart(product));
+  const addProductToCart = () => {
+    dispatch(addItemToCart(product));
+
+    toast.success("Added to cart !", {
+      position: "bottom-left",
+      autoClose: 3900,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      style: {
+        fontFamily: "Arial",
+        fontSize: "17px",
+        fontWeight: "bold",
+        color: "#4CAF50",
+        borderRadius: "5px",
+        paddingLeft: "10px",
+      },
+    });
+  };
 
   useEffect(() => {
     setTimeout(() => {
