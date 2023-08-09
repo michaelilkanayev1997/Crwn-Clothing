@@ -71,13 +71,14 @@ export const BigImage = styled.div`
 export const Thumbnails = styled.div`
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
+  //overflow-x: auto;
   gap: 10px;
   margin-bottom: 20px;
   padding-bottom: 20px;
+
   img {
-    max-width: 80px;
-    max-height: 60px;
+    max-width: 100px;
+    max-height: 80px;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
     cursor: pointer;
@@ -88,6 +89,13 @@ export const Thumbnails = styled.div`
 
     &.active {
       border-color: #007bff;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    img {
+      max-width: 80px;
+      max-height: 60px;
     }
   }
 `;
