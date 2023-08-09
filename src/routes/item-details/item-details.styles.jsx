@@ -71,11 +71,11 @@ export const BigImage = styled.div`
 export const Thumbnails = styled.div`
   display: flex;
   flex-direction: row;
-  //overflow-x: auto;
+  overflow-x: auto;
   gap: 10px;
   margin-bottom: 20px;
   padding-bottom: 20px;
-
+  min-height: 70px;
   img {
     max-width: 100px;
     max-height: 80px;
