@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import { toast } from "react-toastify";
 
 import {
   signInAuthUserWithEmailAndPassword,
@@ -27,6 +28,22 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
+    toast.success("logged in successfully !", {
+      position: "bottom-left",
+      autoClose: 3900,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      style: {
+        fontFamily: "Arial",
+        fontSize: "17px",
+        fontWeight: "bold",
+        color: "#4CAF50",
+        borderRadius: "5px",
+        paddingLeft: "10px",
+      },
+    });
+
     navigate("/");
   };
 
@@ -36,8 +53,38 @@ const SignInForm = () => {
     try {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
+      toast.success("Signed in Successfully !", {
+        position: "bottom-left",
+        autoClose: 3900,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        style: {
+          fontFamily: "Arial",
+          fontSize: "16px",
+          fontWeight: "bold",
+          color: "#4CAF50",
+          borderRadius: "5px",
+          paddingLeft: "10px",
+        },
+      });
       navigate("/");
     } catch (error) {
+      toast.error(`${error.code}`, {
+        position: "bottom-left",
+        autoClose: 3900,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        style: {
+          fontFamily: "Arial",
+          fontSize: "15px",
+          fontWeight: "bold",
+          color: "red",
+          borderRadius: "5px",
+          padding: "10px",
+        },
+      });
       console.log("user sign in failed", error);
     }
   };
