@@ -20,6 +20,7 @@ import {
   query,
   getDocs,
 } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC9cP0CYiDhosiP1lZYUuLfX2-Sib29V5M",
@@ -113,7 +114,24 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
-export const signOutUser = async () => await signOut(auth);
+export const signOutUser = async () => {
+  toast.success("Sign Out Successfully !", {
+    position: "bottom-left",
+    autoClose: 3900,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    style: {
+      fontFamily: "Arial",
+      fontSize: "16px",
+      fontWeight: "bold",
+      color: "#4CAF50",
+      borderRadius: "5px",
+      paddingLeft: "10px",
+    },
+  });
+  await signOut(auth);
+};
 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);

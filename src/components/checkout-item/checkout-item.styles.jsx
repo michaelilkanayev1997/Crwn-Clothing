@@ -38,7 +38,7 @@ export const BaseSpan = styled.span`
 `;
 
 export const Name = styled.span`
-  width: 30%;
+  width: 40%;
 
   @media screen and (max-width: 800px) {
     font-size: 12px;

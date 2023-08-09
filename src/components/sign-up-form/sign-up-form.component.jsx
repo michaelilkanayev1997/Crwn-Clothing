@@ -5,7 +5,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-
+import { toast } from "react-toastify";
 import { SignUpContainer } from "./sign-up-form.styles";
 
 const defaultFormFields = {
@@ -27,7 +27,21 @@ const SignUpForm = () => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("passwords do not match");
+      toast.error("passwords do not match", {
+        position: "bottom-left",
+        autoClose: 3900,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        style: {
+          fontFamily: "Arial",
+          fontSize: "15px",
+          fontWeight: "bold",
+          color: "red",
+          borderRadius: "5px",
+          padding: "10px",
+        },
+      });
       return;
     }
 
@@ -36,14 +50,56 @@ const SignUpForm = () => {
         email,
         password
       );
-      console.log(user);
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
+      toast.success("Signed Up Successfully !", {
+        position: "bottom-left",
+        autoClose: 3900,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        style: {
+          fontFamily: "Arial",
+          fontSize: "16px",
+          fontWeight: "bold",
+          color: "#4CAF50",
+          borderRadius: "5px",
+          paddingLeft: "10px",
+        },
+      });
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
-        alert("Cannot create user, email already in use");
+        toast.error("Cannot create user, email already in use", {
+          position: "bottom-left",
+          autoClose: 3900,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            fontFamily: "Arial",
+            fontSize: "15px",
+            fontWeight: "bold",
+            color: "red",
+            borderRadius: "5px",
+            padding: "10px",
+          },
+        });
       } else {
-        console.log("user creation encountered an error", error);
+        toast.error("user creation encountered an error", {
+          position: "bottom-left",
+          autoClose: 3900,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            fontFamily: "Arial",
+            fontSize: "15px",
+            fontWeight: "bold",
+            color: "red",
+            borderRadius: "5px",
+            padding: "10px",
+          },
+        });
       }
     }
   };
