@@ -13,6 +13,7 @@ import {
   Arrow,
   Value,
   RemoveButton,
+  Name,
 } from "./checkout-item.styles";
 
 const CheckoutItem = memo(({ cartItem }) => {
@@ -28,7 +29,7 @@ const CheckoutItem = memo(({ cartItem }) => {
       <ImageContainer>
         <img src={imageUrl} alt={`${name}`} />
       </ImageContainer>
-      <BaseSpan> {name} </BaseSpan>
+      <Name> {name} </Name>
       <Quantity>
         <Arrow onClick={removeItemHandler}>&#10094;</Arrow>
         <Value>{quantity}</Value>

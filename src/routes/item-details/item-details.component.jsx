@@ -9,7 +9,9 @@ import {
   Label,
   TitleLabel,
 } from "./item-details.styles";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import Button, {
+  BUTTON_TYPE_CLASSES,
+} from "../../components/button/button.component";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../store/cart/cart.reducer";
 import { useLocation } from "react-router-dom";

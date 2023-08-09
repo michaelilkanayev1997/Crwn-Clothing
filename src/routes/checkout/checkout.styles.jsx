@@ -41,6 +41,9 @@ export const HeaderBlock = styled.div`
   &:nth-child(3) {
     margin-left: -50px;
   }
+  &:nth-child(4) {
+    padding-left: 20px;
+  }
 
   @media screen and (max-width: 800px) {
     &:first-child {
@@ -51,6 +54,9 @@ export const HeaderBlock = styled.div`
   @media screen and (max-width: 1130px) {
     &:nth-child(3) {
       margin-left: unset;
+    }
+    &:nth-child(4) {
+      padding-left: 5px;
     }
   }
 `;
