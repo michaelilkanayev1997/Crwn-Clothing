@@ -12,7 +12,7 @@ export const Details = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #f9f9f9;
-  padding: 50px;
+  padding: 35px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   height: 90vh;
@@ -75,14 +75,14 @@ export const Thumbnails = styled.div`
   gap: 10px;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  min-height: 70px;
+
   img {
     max-width: 100px;
     max-height: 80px;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
     cursor: pointer;
-
+    min-height: 40px;
     &:hover {
       border-color: #007bff;
     }
