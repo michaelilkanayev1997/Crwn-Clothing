@@ -21,7 +21,7 @@ const Category = () => {
 
   return (
     <Fragment>
-      <Title>{category.toUpperCase()}</Title>
+      {category && <Title>{category.toUpperCase()}</Title>}
       <CategoryContainer>
         {products &&
           products.map((product) => (
