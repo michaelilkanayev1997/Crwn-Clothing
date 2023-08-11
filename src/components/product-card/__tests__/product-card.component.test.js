@@ -3,7 +3,7 @@ import ProductCard from "../product-card.component";
 import { renderWithProviders } from "../../../utils/test/test.utils";
 
 describe("Product Card tests", () => {
-  test("it should navigate to the ItemDetails page when Product Card button is clicked", async () => {
+  test("it should show the details button on the product", async () => {
     const mockProduct = {
       id: 1,
       imageUrl: "test",
@@ -11,19 +11,15 @@ describe("Product Card tests", () => {
       price: 10,
     };
 
-    const { store } = renderWithProviders(
-      <ProductCard product={mockProduct} />,
-      {
-        preloadedState: {
-          cart: {
-            cartItems: [],
-          },
+    renderWithProviders(<ProductCard product={mockProduct} />, {
+      preloadedState: {
+        cart: {
+          cartItems: [],
         },
-      }
-    );
+      },
+    });
 
     const detailsButtonElement = screen.getByText(/details/i);
-
     expect(detailsButtonElement).toBeInTheDocument();
   });
 });
