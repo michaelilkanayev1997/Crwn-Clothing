@@ -15,7 +15,7 @@ export const Details = styled.div`
   padding: 35px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  height: 90vh;
+  height: 120vh;
   width: 800px;
 
   @media screen and (max-width: 800px) {
