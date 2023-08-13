@@ -1,5 +1,14 @@
 # Crwn-Clothing
 
+### `Pictures:`
+
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/c5292407-94de-4a44-a61b-40c659604aa9" width="255px" height="130px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/794ba058-9cb0-408f-b57b-4c59695a3db3" width="255px" height="130px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/94638058-48b7-4379-9b33-eebd46a1f38a" width="255px" height="130px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/3048d55a-6e52-4a60-965a-28061759dc5c" width="255px" height="130px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/57ff57b3-9580-43a7-aad4-fcb066efd39d" width="255px" height="130px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/335e752b-40fc-4a36-9dc7-c069fb2c93ff" width="255px" height="130px"  ></img> 
+
 ## Description
 
 - This repository contains an E-commerce app completed as part of the "Complete React Developer in 2023" course on Udemy.
@@ -27,26 +36,10 @@
 
 A live demo of the application : https://michael-crwn-clothing.netlify.app
 
-## Installation
+## PWA and Tests:
 
-1. Clone the repository:
+The project includes a comprehensive test suite. They ensure the functionality and stability of the application across different scenarios. 
 
-   git clone https://github.com/michaelilkanayev1997/Crwn-Clothing.git
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/b6b2d38a-0f8a-43eb-a32c-0846a7af8171" width="255px" height="130px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/a5927168-da30-4cc7-809f-47eeaf5690a0" width="255px" height="130px"  ></img> 
 
-2. Install the dependencies:
-
-   yarn install
-
-3. Start the development server:
-
-   yarn start
-
-4. Open the app in your browser:
-
-   Open http://localhost:3000 to view it in the browser.
-
-## Tests
-
-The project includes a comprehensive test suite. They ensure the functionality and stability of the application across different scenarios. To run the tests, use the following command:
-
-       yarn test
