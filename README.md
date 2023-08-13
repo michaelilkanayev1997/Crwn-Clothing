@@ -39,7 +39,11 @@ A live demo of the application : https://michael-crwn-clothing.netlify.app
 ## PWA and Tests:
 
 The project includes a comprehensive test suite. They ensure the functionality and stability of the application across different scenarios. 
+Also i've tested the website on different screen sizes to ensure responsiveness.
 
-<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/b6b2d38a-0f8a-43eb-a32c-0846a7af8171" width="255px" height="130px"  ></img> 
-<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/a5927168-da30-4cc7-809f-47eeaf5690a0" width="255px" height="130px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/b6b2d38a-0f8a-43eb-a32c-0846a7af8171" width="200px" height="100px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/a5927168-da30-4cc7-809f-47eeaf5690a0" width="200px" height="100px"  ></img> 
+<img src="https://github.com/michaelilkanayev1997/Crwn-Clothing/assets/93651794/6ea8895a-59f9-44ab-bc4c-cbc7d46ccc1a" width="200px" height="100px"  ></img> 
+
+
 
