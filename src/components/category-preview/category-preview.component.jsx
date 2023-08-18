@@ -19,7 +19,7 @@ const CategoryPreview = ({ title, products }) => {
               data-testid="product-card"
               key={product.id}
               product={product}
-              category={title}
+              title={title}
             />
           ))}
       </Preview>
