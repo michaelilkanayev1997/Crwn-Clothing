@@ -32,6 +32,10 @@
 - React Design Patterns
 - Testing with Jest and Snapshot testing
 
+## video of the app
+
+https://www.youtube.com/watch?v=zpNIu2dnckw
+
 ## Demo
 
 A live demo of the application : https://michael-crwn-clothing.netlify.app
